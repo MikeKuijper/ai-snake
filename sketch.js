@@ -44,7 +44,7 @@ function setup() {
   startingDate = new Date();
   genFoodList();
   start();
-  noCursor();
+  // noCursor();
   paused = true;
   if (!playAI) frameRate(10);
 }
@@ -188,6 +188,11 @@ function drawScore() {
   stroke(255);
   strokeWeight(1);
   text("score:          " + score, size / 2 + 50, -size / 2 + 50);
+  pop();
+  push();
+  textSize(24);
+  textAlign(RIGHT);
+  text("By Mike Kuijper", width*0.5 - 40, -size / 2 - 80);
   pop();
 }
 

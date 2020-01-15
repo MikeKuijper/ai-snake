@@ -1,6 +1,6 @@
 let percentile = 25 / 5000;
 let mutationRate = 0.1;
-let generationSize = 5000;
+let generationSize = 2000;
 let p = new population([24, 18, 18, 4], generationSize, mutationRate, percentile);
 p.maxMutation = 5;
 
@@ -28,7 +28,7 @@ function play() {
       let cellY = snake.head.y + round(cos(direction)) * i;
       push();
       noStroke();
-      if (showDebug) {
+      if (showDebug && cellX < resolution && cellX >= 0 && cellY < resolution && cellY >= 0) {
         fill(255, 255, 255, 20);
         drawCell({
           x: cellX,
@@ -233,7 +233,7 @@ function aiOverlay() {
   pop();
   push();
   textSize(24);
-  text("Press [SPACEBAR] to toggle network view", -width*0.5 + 20, size / 2 + 80)
+  text("Press [SPACEBAR] to toggle network view", -width*0.5 + 40, size / 2 + 80)
   pop();
   push();
   textSize(32);
